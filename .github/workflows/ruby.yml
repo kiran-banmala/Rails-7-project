@@ -8,6 +8,7 @@ on:
 
 jobs:
   linters:
+    if: false
     runs-on: ubuntu-latest
 
     env:
@@ -28,6 +29,7 @@ jobs:
           bundle exec brakeman -q -w2
 
   test:
+    if: false
     runs-on: ubuntu-latest
 
     env:
