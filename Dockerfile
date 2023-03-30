@@ -21,8 +21,11 @@ ENV LANG=C.UTF-8 \
 RUN gem update --system && gem install bundler
 
 WORKDIR /usr/src/app
+copy Gemfile* .
 
-ENTRYPOINT ["./bin/docker-entrypoint.sh"]
+run bundle install
+copy . .
+#ENTRYPOINT ["./bin/docker-entrypoint.sh"]
 
 EXPOSE 3000
 
